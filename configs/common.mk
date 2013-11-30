@@ -11,14 +11,11 @@ PRODUCT_PACKAGES += \
     CellBroadcastReceiver \
     libemoji \
     LatinImeDictionaryPack \
-    mGerrit \
     Microbes \
     ROMControl \
     Stk \
     su \
-    SwagPapers \
     Torch \
-    UnicornPorn
 
 PRODUCT_PROPERTY_OVERRIDES += \
     ro.url.legal=http://www.google.com/intl/%s/mobile/android/basic/phone-legal.html \
@@ -31,11 +28,6 @@ PRODUCT_PROPERTY_OVERRIDES += \
     windowsmgr.max_events_per_sec=240 \
     ro.kernel.android.checkjni=0 \
     persist.sys.root_access=3
-
-# Installer
-PRODUCT_COPY_FILES += \
-    vendor/behelit/prebuilt/common/bin/persist.sh:install/bin/persist.sh \
-    vendor/behelit/prebuilt/common/etc/persist.conf:system/etc/persist.conf
 
 PRODUCT_COPY_FILES += \
     vendor/behelit/prebuilt/common/lib/libmicrobes_jni.so:system/lib/libmicrobes_jni.so \

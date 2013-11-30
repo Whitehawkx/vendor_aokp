@@ -2,16 +2,16 @@
 $(call inherit-product, device/samsung/vibrantmtd/full_vibrantmtd.mk)
 
 # Inherit common product files.
-$(call inherit-product, vendor/aokp/configs/common.mk)
+$(call inherit-product, vendor/behelit/configs/common.mk)
 
 # Inherit GSM common stuff
-$(call inherit-product, vendor/aokp/configs/gsm.mk)
+$(call inherit-product, vendor/behelit/configs/gsm.mk)
 
 # Inherit Aries-common overlay
-PRODUCT_PACKAGE_OVERLAYS += vendor/aokp/overlay/aries-common
+PRODUCT_PACKAGE_OVERLAYS += vendor/behelit/overlay/aries-common
 
 # Setup device specific product configuration.
-PRODUCT_NAME := aokp_vibrantmtd
+PRODUCT_NAME := crimson_vibrantmtd
 PRODUCT_BRAND := samsung
 PRODUCT_DEVICE := vibrantmtd
 PRODUCT_MODEL := SGH-T959
@@ -23,4 +23,4 @@ PRODUCT_PACKAGES += \
     Thinkfree
 
 PRODUCT_COPY_FILES += \
-    vendor/aokp/prebuilt/bootanimation/bootanimation_480_800.zip:system/media/bootanimation-alt.zip
+    vendor/behelit/prebuilt/bootanimation/bootanimation_480_800.zip:system/media/bootanimation-alt.zip

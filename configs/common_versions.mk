@@ -1,31 +1,31 @@
 # Version information used on all builds
 PRODUCT_BUILD_PROP_OVERRIDES += BUILD_VERSION_TAGS=release-keys USER=android-build BUILD_UTC_DATE=$(shell date +"%s")
 
-DATE = $(shell vendor/aokp/tools/getdate)
-AOKP_BRANCH=kitkat
+DATE = $(shell vendor/behelit/tools/getdate)
+behelit_BRANCH=kitkat
 
-ifneq ($(AOKP_BUILD),)
-    # AOKP_BUILD=<goo version int>/<build string>
+ifneq ($(behelit_BUILD),)
+    # behelit_BUILD=<goo version int>/<build string>
     PRODUCT_PROPERTY_OVERRIDES += \
-        ro.goo.developerid=aokp \
-        ro.goo.rom=aokp \
-        ro.goo.version=$(shell echo $(AOKP_BUILD) | cut -d/ -f1) \
-        ro.aokp.version=$(TARGET_PRODUCT)_$(AOKP_BRANCH)_$(shell echo $(AOKP_BUILD) | cut -d/ -f2)
+        ro.goo.developerid=behelit \
+        ro.goo.rom=behelit \
+        ro.goo.version=$(shell echo $(behelit_BUILD) | cut -d/ -f1) \
+        ro.behelit.version=$(TARGET_PRODUCT)_$(behelit_BRANCH)_$(shell echo $(behelit_BUILD) | cut -d/ -f2)
 else
-    ifneq ($(AOKP_NIGHTLY),)
-        # AOKP_NIGHTLY=true
+    ifneq ($(behelit_NIGHTLY),)
+        # behelit_NIGHTLY=true
         PRODUCT_PROPERTY_OVERRIDES += \
-            ro.aokp.version=$(TARGET_PRODUCT)_$(AOKP_BRANCH)_nightly_$(DATE)
+            ro.behelit.version=$(TARGET_PRODUCT)_$(behelit_BRANCH)_nightly_$(DATE)
     else
         PRODUCT_PROPERTY_OVERRIDES += \
-            ro.aokp.version=$(TARGET_PRODUCT)_$(AOKP_BRANCH)_unofficial_$(DATE)
+            ro.behelit.version=$(TARGET_PRODUCT)_$(behelit_BRANCH)_unofficial_$(DATE)
     endif
 endif
 
 # needed for statistics
 PRODUCT_PROPERTY_OVERRIDES += \
-        ro.aokp.branch=$(AOKP_BRANCH) \
-        ro.aokp.device=$(AOKP_PRODUCT)
+        ro.behelit.branch=$(behelit_BRANCH) \
+        ro.behelit.device=$(behelit_PRODUCT)
 
 # Camera shutter sound property
 PRODUCT_PROPERTY_OVERRIDES += \
